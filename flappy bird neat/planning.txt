@@ -1,0 +1,28 @@
+flappy bird NEAT neural network plan
+
+inputs:
+y position of the bird
+distance to top pipe
+distance to bottom pipe
+
+outputs:
+jump or don't jump - 1 neuron
+
+activation function:
+NEAT will pick activation functions for hidden layers
+my activation function will be tanH - the larger the positive x, the closer to 1 the y gets and the smaller the x, the closer to -1 the y gets
+keeps the values between 1 and -1
+we will check- if the value is greater than 0.5, jump, otherwise don't
+
+population size:
+between 100-150 (i will experiment with this number)
+	note: upon testing, 100 was too many for such a simple game, as an optimal neural network was found by chance in the first generation
+	as this would not be efficient in more complex solutions, i have reduced the population to 20 so that neural evolution will occur rather than relying on chance
+
+fitness function:
+evaluates how well each bird has performed- it should find the best bird so that the best birds will breed
+the birds that make it the furthest in the level will be the best
+
+max generations:
+a cap on generations so that if the ai fails to develop it will start over
+i will set 40 as my maximum
